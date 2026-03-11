@@ -531,7 +531,7 @@
     <section class="hero">
       <div class="panel left-panel">
         <div class="eyebrow">🎂 عد تنازلي ليوم مميز جدًا</div>
-        <h1>مستني 25 مارس<br>عشان يوم ميلاد قلبي </h1>
+        <h1>مستني 25 مارس<br>بقلب سابق الوقت</h1>
         <p class="subtitle">
           كل ثانية بتعدي بتقربني لليوم اللي بالنسبالي مش مجرد تاريخ... ده يوم له معنى كبير جدًا.
         </p>
@@ -557,7 +557,7 @@
 
         <div class="message-box">
           عشان ده مش يوم عادي انا قررت اني اعمله count down ويارب اليوم يكون زي ما انا عايز
-          عشان اليوم ده مميز جدا بالنسبالي عشان دي ذكري وصول اجمل حاجة شافتها عيني للدنيا
+          عشان اليوم ده مميز جدا بالنسبالي عشان دي ذكري وصول اججمل حاجة شافتها عيني للدنيا
           ويارب دايما نحتفل بيه انا وانتي سوا استني ال count down يخلص و خلينا نشوف مستنيكي ايه في البوكس
         </div>
 
@@ -612,7 +612,7 @@
   </main>
 
   <script>
-    const targetDate = new Date('2026-03-25T00:00:00');
+    const targetDate = new Date(Date.now() + 2 * 60 * 1000);
     const giftScene = document.getElementById('giftScene');
     const footerLine = document.getElementById('footerLine');
     const stageNote = document.getElementById('stageNote');
@@ -691,8 +691,6 @@
     createConfetti();
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-  openGift();
   </script>
 </body>
 </html>

@@ -568,15 +568,35 @@
       border: 1px solid rgba(255,255,255,0.9);
     }
 
-    .video-wrapper {
+    .link-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .secret-link {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #ff4f87, #ff8fb1);
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(255,79,135,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .secret-link:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 16px 40px rgba(255,79,135,0.45);
+    }
+
+    .photo-wrapper {
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 16px 40px rgba(194,80,126,0.2);
-      background: #1a0a12;
-      position: relative;
     }
 
-    .video-wrapper video {
+    .reveal-photo {
       width: 100%;
       display: block;
       border-radius: 20px;
@@ -729,10 +749,12 @@
         <!-- Message content goes here -->
         ضعي هنا الرسالة اللي عايز تكتبها ✨
       </div>
-      <div class="video-wrapper">
-        <video id="surpriseVideo" controls playsinline preload="auto">
-          <source src="bb.mp4" type="video/mp4">
-        </video>
+      <div class="link-wrapper">
+        <a href="https://drive.google.com/file/d/1iHTAs2oaQGKVmkB_V67vfu1k1OHFmr9n/view?usp=sharing" target="_blank" class="secret-link">ده ليكي يا باسبوسة 🎀</a>
+      </div>
+
+      <div class="photo-wrapper">
+        <img src="11.jpeg" alt="" class="reveal-photo" />
       </div>
     </div>
   </div>
@@ -751,10 +773,7 @@
     let giftOpened = false;
     let revealShown = false;
 
-    /* ---- preload video silently ---- */
-    const vid = document.getElementById('surpriseVideo');
-    vid.preload = 'auto';
-    vid.load();
+
 
     function pad(n){ return String(n).padStart(2,'0'); }
 
@@ -917,17 +936,12 @@
         overlay.style.backdropFilter = 'blur(6px)';
         overlay.style.webkitBackdropFilter = 'blur(6px)';
         overlay.style.background = 'rgba(255,240,246,0.55)';
-        /* autoplay video */
-        const v = document.getElementById('surpriseVideo');
-        v.play().catch(()=>{});
       }, 400);
     }
 
     function closeOverlay(){
       const overlay = document.getElementById('celebrationOverlay');
       overlay.classList.remove('active');
-      const v = document.getElementById('surpriseVideo');
-      v.pause();
     }
 
     /* ---- countdown ---- */
